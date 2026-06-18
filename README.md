@@ -49,7 +49,10 @@ dataset/raw/imgs/
 
 This yields ~11.7k raw frames. Because consecutive frames are very similar, only
 a subset needs to be labeled to get good coverage of the track (straights,
-curves, intersections, different lighting).
+curves, intersections, different lighting). 
+
+<img width="224" height="224" alt="image" src="https://github.com/user-attachments/assets/1220e3f4-9a6c-4d49-9f60-3e92b0a5c138" />
+
 
 ---
 
@@ -62,6 +65,8 @@ Each frame is labeled with a **single target point** — the spot on the road th
 ```bash
 python manual_labeling.py
 ```
+<img width="300" height="330" alt="image" src="https://github.com/user-attachments/assets/d78355d0-e32b-4717-a3d9-e6e2dfefea83" />
+
 
 How it works:
 
@@ -192,6 +197,8 @@ It overlays the predicted `distance`/`angle` and draws a heading arrow on each
 frame (Space = pause, Right/`d` = step, `Q`/`Esc` = quit). It auto-detects the
 architecture (ResNet-18 / MobileNetV2 / SmallCNN) from the checkpoint keys.
 
+<img width="426" height="240" alt="Video Project 3" src="https://github.com/user-attachments/assets/92412d9e-1dd6-46c3-a72e-ab83885c50e4" />
+
 ---
 
 ## 4. Running on the JetBot
@@ -272,6 +279,8 @@ Particular mention should be made of problems with hardware. First of all, our f
 ### Conclusions
 
 We created pipeline for autonomous jetbot operation. We've collected our own dataset, implemented different strategies, and became a recordists among other teams. Our best time of 11.98 seconds on a big track shows that we created competitive workflow.
+
+<img width="240" height="240" alt="0618" src="https://github.com/user-attachments/assets/9c996989-4b02-4055-912c-2c739fc297c8" />
 
 ## Repository layout
 
