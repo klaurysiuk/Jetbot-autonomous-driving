@@ -1,7 +1,5 @@
 # JetBot Road Following
 
-## Group "Aleksander Hański II"
-
 A deep-learning road-follower for the [NVIDIA JetBot](https://jetbot.org/). A
 single forward camera frame is regressed into a 2-value target
 `[distance, angle]` that describes "where on the road the robot should aim", and
