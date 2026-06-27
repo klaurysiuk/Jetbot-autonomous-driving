@@ -1,5 +1,7 @@
 # JetBot Road Following
 
+## Group "Aleksander Hański II"
+
 A deep-learning road-follower for the [NVIDIA JetBot](https://jetbot.org/). A
 single forward camera frame is regressed into a 2-value target
 `[distance, angle]` that describes "where on the road the robot should aim", and
@@ -267,7 +269,17 @@ Speaking about the model, in the beginning, in the beginning we chose **ResNet-1
 Finally, finding proper values for **PID controller** wasn't big problem, we've done it empirically during a couple of tests on track.
 
 ### Hardware
-Particular mention should be made of problems with hardware. First of all, our first two jetbots had problems with GPU and drivers, so we had to reflash the jetbot's hardware. Second, in the middle of tests, our jetbot's wheel axle was damaged, so we had to change it. Additionally, camera calibration should have been done each time we started autonomous driving.
+Particular mention should be made of problems with hardware. First of all, our first two jetbots had problems with drivers, so we had to reflash it. Second, in the middle of tests, our jetbot's wheel axle was damaged, so we had to change it. Additionally, camera calibration should have been done each time we started autonomous driving.
+
+### Reproducibility 
+
+Our script is  designed to run on any JetBot setup, supporting both GPU-accelerated and CPU-only inference. It maintains a low memory footprint to prevent out-of-memory crashes and requires minimal storage space. We successfully tested our code directly on the native OS across multiple JetBots with varying hardware configurations.
+
+When deploying on devices without a GPU, the inference rate naturally decreases; to maintain stable road following, we adjusted the PID controller parameters (e.g., reducing the base speed). Despite these hardware differences, the core neural network model remained completely unchanged.
+
+Camera setup was straightforward; however, we strictly maintained the camera's tilt angle relative to the ground to match the one used during dataset creation (~35-40 degrees). Additionally, we tested our script across various lighting conditions, confirming that the model performs robustly in both bright and dim environments.
+
+Both the pre-trained weights and the complete dataset are available for download. Full details regarding the model's training process, hyperparameters, and reproducibility can be found in the provided training notebook ([mobilenet_training.ipynb](./mobilenet_traning.ipynb)).
 
 ### Conclusions
 
